@@ -4,9 +4,14 @@ def start
 
   check_age
 
-  puts "Would you like to check another age?"
+  puts "Would you like to check another age? (Y)es or (N)o"
   print"< "
   again = gets.chomp
+  if again.upcase == "Y"
+    puts "Beginning again:"
+  else
+    puts "Goodbye"
+  end
   end
 
 end
