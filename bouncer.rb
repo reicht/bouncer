@@ -2,13 +2,16 @@ def start
   again = "y"
   while again.upcase == "Y"
 
-  check_age
+  puts "Which country are you asking from? U(S) or U(K)?"
+  print "< "
+  residence = gets.chomp
+  check_age(residence)
 
   puts "Would you like to check another age? (Y)es or (N)o"
   print"< "
   again = gets.chomp
   if again.upcase == "Y"
-    puts "Beginning again:"
+    puts "Beginning again.   <><><><><><><><><><><>"
   else
     puts "Goodbye"
   end
@@ -16,7 +19,7 @@ def start
 
 end
 
-def check_age
+def check_age(country)
   puts "Please enter your age:"
   print "< "
   age = gets.chomp.to_i
@@ -32,6 +35,15 @@ def check_age
   when age > 18
     puts "Legal adults may partake in both smoking, and voting."
 
+  when country.upcase == "k", age >15
+    puts "Are you under parental supervision? (Y)es or (N)o"
+    print "< "
+    supervise = gets.chomp
+      if supervise.upcase == "Y"
+        puts "You are permitted to drink under adult supervision."
+      else
+        puts "16 and 17 year olds may only drink with parental supervision."
+      end
   else
     puts "Minors are permitted to have patience"
   end
