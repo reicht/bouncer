@@ -15,7 +15,7 @@ def check_age(country)
     puts "Legal adults may partake in both smoking, and voting."
 
   when country.upcase == "k", age >15
-    puts "Are you under parental supervision? (Y)es or (N)o"
+    puts "Are you under parental supervision? (Y) for Yes, anything else for No."
     print "< "
     supervise = gets.chomp
       if supervise.upcase == "Y"
